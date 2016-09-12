@@ -15,7 +15,8 @@ Feature: Kata Deck of Cards
 
 
   Scenario:  I move the rover
-    Given a staring point
-    When I compare input an array of instructions
+    Given Rover
+    And  a starting point
+    When I compare an input array of instructions
     Then I should move the rover
 

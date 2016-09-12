@@ -12,4 +12,18 @@ class RoverSpec extends ObjectBehavior
     {
         $this->shouldHaveType(Rover::class);
     }
+
+    function it_compares_an_array(){
+        $instructions =['L','F'];
+        $compare = $this->compare($instructions);
+
+
+    }
+
+    function it_checks_if_moved(){
+
+        $moved = $this->getMoved();
+
+
+    }
 }

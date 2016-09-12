@@ -4,12 +4,15 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-
+Use PHPUnit_Framework_Assert as Assert;
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
+    private $startingPoint;
+    private $rover;
+    private $instructions;
     /**
      * Initializes context.
      *
@@ -19,22 +22,34 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function __construct()
     {
+
+        $this->instructions =['L','F','R','F','F'];
+
     }
 
     /**
-     * @Given a staring point
+     * @Given Rover
      */
-    public function aStaringPoint()
+    public function rover()
     {
-        throw new PendingException();
+        $this->rover = new \Application\Rover();
     }
 
     /**
-     * @When I compare input an array of instructions
+     * @Given a starting point
      */
-    public function iCompareInputAnArrayOfInstructions()
+    public function aStartingPoint()
     {
-        throw new PendingException();
+        $this->startingPoint= new \Application\StartingPoint();
+    }
+
+    /**
+     * @When I compare an input array of instructions
+     */
+    public function iCompareAnInputArrayOfInstructions()
+    {
+
+        $this->rover->compare($this->instructions);
     }
 
     /**
@@ -42,7 +57,8 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iShouldMoveTheRover()
     {
-        throw new PendingException();
+        Assert::assertTrue($this->rover->getMoved());
+
     }
 
 
