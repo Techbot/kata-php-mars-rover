@@ -50,3 +50,7 @@
 /app/
 /bin/
 /web/
+.idea/copyright/
+.idea/workspace.xml
+/bin/console
+/bin/symfony_requirements
