@@ -2,7 +2,10 @@
 
 namespace Application\Directions;
 
-class North
+use Application\Direction;
+use Application\Rover;
+
+class North implements Direction
 {
     /**
      * @param Rover $rover
@@ -18,5 +21,15 @@ class North
     public function turnRight(Rover $rover)
     {
         $rover->setDirection(new East());
+    }
+
+    public function moveForward(Rover $rover)
+    {
+        // TODO: Implement moveForward() method.
+    }
+
+    public function moveBackward(Rover $rover)
+    {
+        // TODO: Implement moveBackward() method.
     }
 }

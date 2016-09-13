@@ -2,7 +2,9 @@
 
 namespace Application\Directions;
 
-class East
+use Application\Direction;
+use Application\Rover;
+class East implements Direction
 {
     /**
      * @param Rover $rover
