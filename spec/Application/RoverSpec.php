@@ -8,14 +8,20 @@ use Prophecy\Argument;
 
 class RoverSpec extends ObjectBehavior
 {
+
     function it_is_initializable()
     {
         $this->shouldHaveType(Rover::class);
     }
 
     function it_compares_an_array(){
+
+      //  exit();
+        echo 'hi';
+
         $instructions =['L','F'];
         $compare = $this->compare($instructions);
+
 
 
     }

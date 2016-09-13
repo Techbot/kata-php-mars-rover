@@ -8,13 +8,15 @@ class Rover
 
     function __construct()
     {
-        $this->grid = new Grid();
+        $x=5;
+        $y=5;
+        $this->grid = new Grid($x,$y);
     }
 
     public function compare($instructions)
     {
         foreach ($instructions as $instruction) {
-            print_r($instruction);
+            echo('ins:' .$instruction);
         }
         $this->moved = true;
         return ;
